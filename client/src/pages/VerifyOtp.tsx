@@ -21,10 +21,8 @@ const VerifyOtp = () => {
             email: user.email,
             otp: data.otp
         }
-        console.log(body)
         await verfiyOTPService(body)
     })
-    console.log(error)
     useEffect(() => {
         if (isSuccess) {
             const message = responcedata?.message;

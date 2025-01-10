@@ -23,18 +23,17 @@ const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const corsOptions = {
     origin: [
-        'http://localhost:5173',
-        'https://note-making-90rhuity6-ashu6200s-projects.vercel.app',
+        "http://localhost:5173",
         "https://note-making-two.vercel.app/",
-        "https://note-making-20axfwxcm-ashu6200s-projects.vercel.app/",
+        "https://note-making-7hhwlkxyh-ashu6200s-projects.vercel.app/",
+        "https://note-making-ashu6200s-projects.vercel.app/",
     ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
 };
 app.use((0, cors_1.default)(corsOptions));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.get('/', (0, asyncHandler_1.default)((req, res, _next) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/", (0, asyncHandler_1.default)((req, res, _next) => __awaiter(void 0, void 0, void 0, function* () {
     return (0, apiResponse_1.apiResponse)(req, res, 200, "NoteMaking server is live", {});
 })));
 app.use("/user", userRoute_1.default);
