@@ -4,7 +4,7 @@ import { RootState } from "./store";
 const apiUrl = import.meta.env.VITE_SERVER_URL
 console.log(apiUrl);
 const baseQuery = fetchBaseQuery({
-    baseUrl: apiUrl,
+    baseUrl: "https://note-making-nzyo.onrender.com",
     prepareHeaders: (headers, { getState }) => {
         const state = getState() as RootState;
         const token = state.user?.token;
