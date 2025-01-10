@@ -20,14 +20,11 @@ const apiError_1 = require("./utils/apiError");
 const userRoute_1 = __importDefault(require("./routes/userRoute"));
 const noteRoute_1 = __importDefault(require("./routes/noteRoute"));
 const cors_1 = __importDefault(require("cors"));
+const dotenv_1 = __importDefault(require("dotenv"));
 const app = (0, express_1.default)();
+dotenv_1.default.config();
 const corsOptions = {
-    origin: [
-        "http://localhost:5173",
-        "https://note-making-two.vercel.app/",
-        "https://note-making-7hhwlkxyh-ashu6200s-projects.vercel.app/",
-        "https://note-making-ashu6200s-projects.vercel.app/",
-    ],
+    origin: process.env.CORS_ORIGINS.split(','),
     credentials: true,
 };
 app.use((0, cors_1.default)(corsOptions));
