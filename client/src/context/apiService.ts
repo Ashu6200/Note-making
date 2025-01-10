@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { RootState } from "./store";
 
-// const apiUrl = import.meta.env.VITE_SERVER_URL
+const apiUrl = import.meta.env.VITE_SERVER_URL
 const baseQuery = fetchBaseQuery({
-    baseUrl: "https://note-making-fprw.onrender.com",
+    baseUrl: apiUrl,
     prepareHeaders: (headers, { getState }) => {
         const state = getState() as RootState;
         const token = state.user?.token;
