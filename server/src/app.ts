@@ -6,19 +6,15 @@ import { apiError } from "./utils/apiError";
 import userRouter from "./routes/userRoute";
 import noteRouter from "./routes/noteRoute";
 import cors from "cors";
+import dotenv from 'dotenv';
 
 const app: Application = express();
 
+dotenv.config();
 const corsOptions = {
-    origin: [
-        "http://localhost:5173",
-        "https://note-making-two.vercel.app/",
-        "https://note-making-7hhwlkxyh-ashu6200s-projects.vercel.app/",
-        "https://note-making-ashu6200s-projects.vercel.app/",
-    ],
+    origin: (process.env.CORS_ORIGINS as string).split(','),
     credentials: true,
 };
-
 app.use(cors(corsOptions));
 
 app.use(express.json());
