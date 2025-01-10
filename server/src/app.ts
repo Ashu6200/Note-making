@@ -9,16 +9,7 @@ import cors from 'cors'
 
 const app: Application = express();
 
-const corsOptions = {
-    origin: [
-        'http://localhost:5173', // For local development
-        'https://note-making-90rhuity6-ashu6200s-projects.vercel.app', // Vercel URL
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
