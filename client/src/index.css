@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.shadowBox {
+    box-shadow: 0px 0px 8px 0px #232323;
+}
+
+.shadowBoxNote {
+    box-shadow: 0px 0px 3px 0px #232323;
+}
+
+label {
+    color: #999;
+    transform: translate(0.25rem, -1.5rem);
+    transition: all 0.2s ease-out;
+}
+
+input:focus+label {
+    color: #111;
+    transform: translate(0, -2.75rem);
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+    color: #111;
+    transform: translate(0, -2.75rem);
+}
+
+label {
+    display: block;
+    transform: translate(0, -2.75rem);
+}
+
+@supports (not (-ms-ime-align:auto)) {
+    label {
+        color: #999;
+        transform: translate(0.25rem, -1.5rem);
+        transition: all 0.2s ease-out;
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label {
+        color: #111;
+        transform: translate(0, -2.75rem);
+    }
+}
